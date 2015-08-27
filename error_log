@@ -1,0 +1,264 @@
+[27-Jul-2015 05:05:45 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 92
+[28-Jul-2015 03:40:54 UTC] PHP Warning:  require_once(../vendor/Mustache/Autoloader.php): failed to open stream: No such file or directory in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 3
+[28-Jul-2015 03:40:54 UTC] PHP Fatal error:  require_once(): Failed opening required '../vendor/Mustache/Autoloader.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 3
+[28-Jul-2015 03:40:55 UTC] PHP Warning:  require_once(../vendor/Mustache/Autoloader.php): failed to open stream: No such file or directory in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 3
+[28-Jul-2015 03:40:55 UTC] PHP Fatal error:  require_once(): Failed opening required '../vendor/Mustache/Autoloader.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 3
+[28-Jul-2015 03:41:22 UTC] PHP Warning:  require_once(../vendor/Mustache/Autoloader.php): failed to open stream: No such file or directory in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 5
+[28-Jul-2015 03:41:22 UTC] PHP Fatal error:  require_once(): Failed opening required '../vendor/Mustache/Autoloader.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 5
+[28-Jul-2015 03:41:23 UTC] PHP Warning:  require_once(../vendor/Mustache/Autoloader.php): failed to open stream: No such file or directory in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 5
+[28-Jul-2015 03:41:23 UTC] PHP Fatal error:  require_once(): Failed opening required '../vendor/Mustache/Autoloader.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 5
+[31-Jul-2015 07:43:35 UTC] PHP Parse error:  syntax error, unexpected 'as' (T_AS) in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 230
+[31-Jul-2015 07:43:37 UTC] PHP Parse error:  syntax error, unexpected 'as' (T_AS) in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 230
+[31-Jul-2015 19:16:39 UTC] PHP Catchable fatal error:  Object of class WP_Post could not be converted to string in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 262
+[31-Jul-2015 19:16:40 UTC] PHP Catchable fatal error:  Object of class WP_Post could not be converted to string in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 262
+[31-Jul-2015 19:16:58 UTC] PHP Catchable fatal error:  Object of class WP_Post could not be converted to string in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 262
+[31-Jul-2015 19:17:26 UTC] PHP Warning:  file_get_contents(/wp-content/themes/cfe/templates/mustache/list.mustache): failed to open stream: No such file or directory in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 262
+[31-Jul-2015 19:17:26 UTC] PHP Warning:  file_get_contents(/wp-content/themes/cfe/templates/mustache/post.mustache): failed to open stream: No such file or directory in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 268
+[31-Jul-2015 19:17:27 UTC] PHP Warning:  file_get_contents(/wp-content/themes/cfe/templates/mustache/list.mustache): failed to open stream: No such file or directory in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 262
+[31-Jul-2015 19:17:27 UTC] PHP Warning:  file_get_contents(/wp-content/themes/cfe/templates/mustache/post.mustache): failed to open stream: No such file or directory in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 268
+[31-Jul-2015 19:17:58 UTC] PHP Catchable fatal error:  Object of class stdClass could not be converted to string in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 262
+[31-Jul-2015 19:18:46 UTC] PHP Catchable fatal error:  Object of class stdClass could not be converted to string in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 260
+[31-Jul-2015 19:18:50 UTC] PHP Catchable fatal error:  Object of class stdClass could not be converted to string in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 260
+[31-Jul-2015 19:18:56 UTC] PHP Catchable fatal error:  Object of class stdClass could not be converted to string in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 260
+[31-Jul-2015 19:19:17 UTC] PHP Catchable fatal error:  Object of class stdClass could not be converted to string in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 260
+[31-Jul-2015 19:19:29 UTC] PHP Catchable fatal error:  Object of class stdClass could not be converted to string in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 260
+[31-Jul-2015 19:20:02 UTC] PHP Catchable fatal error:  Object of class stdClass could not be converted to string in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 260
+[31-Jul-2015 21:41:16 UTC] PHP Fatal error:  Call to a member function getArticles() on a non-object in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 69
+[31-Jul-2015 21:41:17 UTC] PHP Fatal error:  Call to a member function getArticles() on a non-object in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 69
+[31-Jul-2015 21:41:36 UTC] PHP Fatal error:  Call to a member function getArticles() on a non-object in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 69
+[31-Jul-2015 21:41:55 UTC] PHP Fatal error:  Call to a member function getArticles() on a non-object in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 69
+[31-Jul-2015 21:53:13 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 66
+[31-Jul-2015 21:53:13 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 66
+[31-Jul-2015 21:53:13 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 66
+[31-Jul-2015 21:53:13 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 66
+[31-Jul-2015 21:53:13 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 66
+[01-Aug-2015 00:24:30 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 71
+[01-Aug-2015 00:33:03 UTC] PHP Fatal error:  Call to undefined method X_API::getArticles() in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 69
+[01-Aug-2015 00:33:04 UTC] PHP Fatal error:  Call to undefined method X_API::getArticles() in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 69
+[01-Aug-2015 01:42:44 UTC] PHP Warning:  htmlspecialchars() expects parameter 1 to be string, array given in /home/bowser/sites/cfe/wp-content/themes/cfe/vendor/Mustache/Cache/NoopCache.php(45) : eval()'d code on line 15
+[01-Aug-2015 01:42:44 UTC] PHP Warning:  htmlspecialchars() expects parameter 1 to be string, array given in /home/bowser/sites/cfe/wp-content/themes/cfe/vendor/Mustache/Cache/NoopCache.php(45) : eval()'d code on line 15
+[01-Aug-2015 01:42:44 UTC] PHP Warning:  htmlspecialchars() expects parameter 1 to be string, array given in /home/bowser/sites/cfe/wp-content/themes/cfe/vendor/Mustache/Cache/NoopCache.php(45) : eval()'d code on line 15
+[01-Aug-2015 01:42:44 UTC] PHP Warning:  htmlspecialchars() expects parameter 1 to be string, array given in /home/bowser/sites/cfe/wp-content/themes/cfe/vendor/Mustache/Cache/NoopCache.php(45) : eval()'d code on line 15
+[01-Aug-2015 01:42:44 UTC] PHP Warning:  htmlspecialchars() expects parameter 1 to be string, array given in /home/bowser/sites/cfe/wp-content/themes/cfe/vendor/Mustache/Cache/NoopCache.php(45) : eval()'d code on line 15
+[01-Aug-2015 01:42:44 UTC] PHP Warning:  htmlspecialchars() expects parameter 1 to be string, array given in /home/bowser/sites/cfe/wp-content/themes/cfe/vendor/Mustache/Cache/NoopCache.php(45) : eval()'d code on line 15
+[01-Aug-2015 01:42:50 UTC] PHP Warning:  htmlspecialchars() expects parameter 1 to be string, array given in /home/bowser/sites/cfe/wp-content/themes/cfe/vendor/Mustache/Cache/NoopCache.php(45) : eval()'d code on line 15
+[01-Aug-2015 01:42:50 UTC] PHP Warning:  htmlspecialchars() expects parameter 1 to be string, array given in /home/bowser/sites/cfe/wp-content/themes/cfe/vendor/Mustache/Cache/NoopCache.php(45) : eval()'d code on line 15
+[01-Aug-2015 01:42:50 UTC] PHP Warning:  htmlspecialchars() expects parameter 1 to be string, array given in /home/bowser/sites/cfe/wp-content/themes/cfe/vendor/Mustache/Cache/NoopCache.php(45) : eval()'d code on line 15
+[01-Aug-2015 01:42:50 UTC] PHP Warning:  htmlspecialchars() expects parameter 1 to be string, array given in /home/bowser/sites/cfe/wp-content/themes/cfe/vendor/Mustache/Cache/NoopCache.php(45) : eval()'d code on line 15
+[01-Aug-2015 01:42:50 UTC] PHP Warning:  htmlspecialchars() expects parameter 1 to be string, array given in /home/bowser/sites/cfe/wp-content/themes/cfe/vendor/Mustache/Cache/NoopCache.php(45) : eval()'d code on line 15
+[01-Aug-2015 01:42:50 UTC] PHP Warning:  htmlspecialchars() expects parameter 1 to be string, array given in /home/bowser/sites/cfe/wp-content/themes/cfe/vendor/Mustache/Cache/NoopCache.php(45) : eval()'d code on line 15
+[01-Aug-2015 01:44:35 UTC] PHP Warning:  htmlspecialchars() expects parameter 1 to be string, array given in /home/bowser/sites/cfe/wp-content/themes/cfe/vendor/Mustache/Cache/NoopCache.php(45) : eval()'d code on line 15
+[01-Aug-2015 01:44:35 UTC] PHP Warning:  htmlspecialchars() expects parameter 1 to be string, array given in /home/bowser/sites/cfe/wp-content/themes/cfe/vendor/Mustache/Cache/NoopCache.php(45) : eval()'d code on line 15
+[01-Aug-2015 01:44:35 UTC] PHP Warning:  htmlspecialchars() expects parameter 1 to be string, array given in /home/bowser/sites/cfe/wp-content/themes/cfe/vendor/Mustache/Cache/NoopCache.php(45) : eval()'d code on line 15
+[01-Aug-2015 01:44:35 UTC] PHP Warning:  htmlspecialchars() expects parameter 1 to be string, array given in /home/bowser/sites/cfe/wp-content/themes/cfe/vendor/Mustache/Cache/NoopCache.php(45) : eval()'d code on line 15
+[01-Aug-2015 01:44:35 UTC] PHP Warning:  htmlspecialchars() expects parameter 1 to be string, array given in /home/bowser/sites/cfe/wp-content/themes/cfe/vendor/Mustache/Cache/NoopCache.php(45) : eval()'d code on line 15
+[01-Aug-2015 01:44:35 UTC] PHP Warning:  htmlspecialchars() expects parameter 1 to be string, array given in /home/bowser/sites/cfe/wp-content/themes/cfe/vendor/Mustache/Cache/NoopCache.php(45) : eval()'d code on line 15
+[01-Aug-2015 01:44:37 UTC] PHP Warning:  htmlspecialchars() expects parameter 1 to be string, array given in /home/bowser/sites/cfe/wp-content/themes/cfe/vendor/Mustache/Cache/NoopCache.php(45) : eval()'d code on line 15
+[01-Aug-2015 01:44:37 UTC] PHP Warning:  htmlspecialchars() expects parameter 1 to be string, array given in /home/bowser/sites/cfe/wp-content/themes/cfe/vendor/Mustache/Cache/NoopCache.php(45) : eval()'d code on line 15
+[01-Aug-2015 01:44:37 UTC] PHP Warning:  htmlspecialchars() expects parameter 1 to be string, array given in /home/bowser/sites/cfe/wp-content/themes/cfe/vendor/Mustache/Cache/NoopCache.php(45) : eval()'d code on line 15
+[01-Aug-2015 01:44:37 UTC] PHP Warning:  htmlspecialchars() expects parameter 1 to be string, array given in /home/bowser/sites/cfe/wp-content/themes/cfe/vendor/Mustache/Cache/NoopCache.php(45) : eval()'d code on line 15
+[01-Aug-2015 01:44:37 UTC] PHP Warning:  htmlspecialchars() expects parameter 1 to be string, array given in /home/bowser/sites/cfe/wp-content/themes/cfe/vendor/Mustache/Cache/NoopCache.php(45) : eval()'d code on line 15
+[01-Aug-2015 01:44:37 UTC] PHP Warning:  htmlspecialchars() expects parameter 1 to be string, array given in /home/bowser/sites/cfe/wp-content/themes/cfe/vendor/Mustache/Cache/NoopCache.php(45) : eval()'d code on line 15
+[01-Aug-2015 03:40:49 UTC] PHP Warning:  Creating default object from empty value in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 107
+[01-Aug-2015 03:41:00 UTC] PHP Warning:  Creating default object from empty value in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 107
+[01-Aug-2015 03:41:51 UTC] PHP Warning:  Creating default object from empty value in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 105
+[01-Aug-2015 03:41:56 UTC] PHP Warning:  Creating default object from empty value in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 105
+[01-Aug-2015 03:43:04 UTC] PHP Warning:  Creating default object from empty value in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 106
+[01-Aug-2015 03:43:29 UTC] PHP Warning:  Creating default object from empty value in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 108
+[01-Aug-2015 03:44:16 UTC] PHP Warning:  Creating default object from empty value in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 108
+[01-Aug-2015 03:44:45 UTC] PHP Warning:  Creating default object from empty value in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 106
+[02-Aug-2015 04:26:27 UTC] PHP Parse error:  syntax error, unexpected '&&' (T_BOOLEAN_AND) in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 27
+[03-Aug-2015 07:35:13 UTC] PHP Warning:  htmlspecialchars() expects parameter 1 to be string, array given in /home/bowser/sites/cfe/wp-content/themes/cfe/vendor/Mustache/Cache/NoopCache.php(45) : eval()'d code on line 15
+[03-Aug-2015 07:35:15 UTC] PHP Warning:  htmlspecialchars() expects parameter 1 to be string, array given in /home/bowser/sites/cfe/wp-content/themes/cfe/vendor/Mustache/Cache/NoopCache.php(45) : eval()'d code on line 15
+[11-Aug-2015 20:11:20 UTC] PHP Catchable fatal error:  Object of class stdClass could not be converted to string in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 76
+[11-Aug-2015 20:12:28 UTC] PHP Parse error:  syntax error, unexpected '$categories_new' (T_VARIABLE) in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 76
+[11-Aug-2015 20:12:41 UTC] PHP Catchable fatal error:  Object of class stdClass could not be converted to string in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 76
+[11-Aug-2015 20:12:42 UTC] PHP Catchable fatal error:  Object of class stdClass could not be converted to string in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 76
+[11-Aug-2015 20:13:06 UTC] PHP Catchable fatal error:  Object of class stdClass could not be converted to string in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 76
+[11-Aug-2015 20:13:36 UTC] PHP Catchable fatal error:  Object of class stdClass could not be converted to string in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 74
+[11-Aug-2015 20:13:39 UTC] PHP Catchable fatal error:  Object of class stdClass could not be converted to string in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 74
+[11-Aug-2015 20:13:40 UTC] PHP Catchable fatal error:  Object of class stdClass could not be converted to string in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 74
+[11-Aug-2015 20:29:02 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:02 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:02 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:02 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:02 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:02 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:02 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:02 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:02 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:02 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:02 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:02 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:02 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:02 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:02 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:02 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:04 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:04 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:04 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:04 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:04 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:04 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:04 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:04 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:04 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:04 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:04 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:04 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:04 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:04 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:04 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:04 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:05 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:05 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:05 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:05 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:05 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:05 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:05 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:05 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:05 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:05 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:05 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:05 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:05 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:05 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:05 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:05 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:06 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:06 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:06 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:06 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:06 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:06 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:06 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:06 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:06 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:06 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:06 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:06 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:06 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:06 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:06 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:06 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:06 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:06 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:06 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:06 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:06 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:06 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:06 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:06 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:06 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:06 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:06 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:06 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:06 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:06 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:06 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[11-Aug-2015 20:29:06 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 75
+[14-Aug-2015 04:42:15 UTC] PHP Warning:  htmlspecialchars() expects parameter 1 to be string, array given in /home/bowser/sites/cfe/wp-content/themes/cfe/vendor/Mustache/Cache/NoopCache.php(45) : eval()'d code on line 18
+[14-Aug-2015 04:45:52 UTC] PHP Warning:  htmlspecialchars() expects parameter 1 to be string, array given in /home/bowser/sites/cfe/wp-content/themes/cfe/vendor/Mustache/Cache/NoopCache.php(45) : eval()'d code on line 18
+[14-Aug-2015 04:45:54 UTC] PHP Warning:  htmlspecialchars() expects parameter 1 to be string, array given in /home/bowser/sites/cfe/wp-content/themes/cfe/vendor/Mustache/Cache/NoopCache.php(45) : eval()'d code on line 18
+[14-Aug-2015 04:45:55 UTC] PHP Warning:  htmlspecialchars() expects parameter 1 to be string, array given in /home/bowser/sites/cfe/wp-content/themes/cfe/vendor/Mustache/Cache/NoopCache.php(45) : eval()'d code on line 18
+[14-Aug-2015 04:45:56 UTC] PHP Warning:  htmlspecialchars() expects parameter 1 to be string, array given in /home/bowser/sites/cfe/wp-content/themes/cfe/vendor/Mustache/Cache/NoopCache.php(45) : eval()'d code on line 18
+[14-Aug-2015 04:45:57 UTC] PHP Warning:  htmlspecialchars() expects parameter 1 to be string, array given in /home/bowser/sites/cfe/wp-content/themes/cfe/vendor/Mustache/Cache/NoopCache.php(45) : eval()'d code on line 18
+[14-Aug-2015 04:45:58 UTC] PHP Warning:  htmlspecialchars() expects parameter 1 to be string, array given in /home/bowser/sites/cfe/wp-content/themes/cfe/vendor/Mustache/Cache/NoopCache.php(45) : eval()'d code on line 18
+[14-Aug-2015 04:45:58 UTC] PHP Warning:  htmlspecialchars() expects parameter 1 to be string, array given in /home/bowser/sites/cfe/wp-content/themes/cfe/vendor/Mustache/Cache/NoopCache.php(45) : eval()'d code on line 18
+[14-Aug-2015 04:45:59 UTC] PHP Warning:  htmlspecialchars() expects parameter 1 to be string, array given in /home/bowser/sites/cfe/wp-content/themes/cfe/vendor/Mustache/Cache/NoopCache.php(45) : eval()'d code on line 18
+[14-Aug-2015 04:46:00 UTC] PHP Warning:  htmlspecialchars() expects parameter 1 to be string, array given in /home/bowser/sites/cfe/wp-content/themes/cfe/vendor/Mustache/Cache/NoopCache.php(45) : eval()'d code on line 18
+[14-Aug-2015 04:46:01 UTC] PHP Warning:  htmlspecialchars() expects parameter 1 to be string, array given in /home/bowser/sites/cfe/wp-content/themes/cfe/vendor/Mustache/Cache/NoopCache.php(45) : eval()'d code on line 18
+[19-Aug-2015 06:37:21 UTC] PHP Fatal error:  Call to undefined function get_the_site_url() in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 8
+[19-Aug-2015 06:37:32 UTC] PHP Fatal error:  Cannot use object of type WP_Query as array in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 8
+[19-Aug-2015 06:37:44 UTC] PHP Fatal error:  Cannot use object of type WP_Query as array in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 8
+[19-Aug-2015 15:19:56 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 15:19:56 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 292
+[19-Aug-2015 15:20:10 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 15:20:10 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 292
+[19-Aug-2015 15:20:22 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 15:20:27 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 15:20:28 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 15:20:29 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 15:20:30 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 15:21:28 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 15:21:58 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 15:21:58 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 292
+[19-Aug-2015 15:22:26 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 15:22:26 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 292
+[19-Aug-2015 15:22:48 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 15:22:48 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 292
+[19-Aug-2015 15:24:06 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 15:24:35 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 15:24:44 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 15:24:48 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 15:25:43 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 15:25:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 292
+[19-Aug-2015 15:29:42 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 15:30:09 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 15:30:11 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 15:33:29 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 292
+[19-Aug-2015 15:49:32 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 15:49:32 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 15:53:21 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 15:53:21 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 15:56:31 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 15:56:31 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 292
+[19-Aug-2015 15:57:48 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 15:57:48 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 292
+[19-Aug-2015 15:58:40 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 15:58:40 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 15:58:40 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 15:58:40 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 15:58:40 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 15:58:40 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 15:58:40 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 15:58:40 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 15:58:42 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 15:58:42 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 15:58:42 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 15:58:42 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 15:58:42 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 15:58:42 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 15:58:42 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 15:58:42 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 15:59:01 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 15:59:01 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 15:59:01 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 15:59:01 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 15:59:01 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 15:59:01 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 15:59:01 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 15:59:01 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 15:59:17 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 15:59:17 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 15:59:17 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 15:59:17 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 15:59:17 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 15:59:17 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 15:59:17 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 15:59:17 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 16:01:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 292
+[19-Aug-2015 16:01:50 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 292
+[19-Aug-2015 16:03:24 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 292
+[19-Aug-2015 16:03:31 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 292
+[19-Aug-2015 16:03:54 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 292
+[19-Aug-2015 16:03:59 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 292
+[19-Aug-2015 16:44:28 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 16:45:43 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 16:45:44 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 16:45:45 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 16:45:47 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 16:45:57 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 16:46:06 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/bowser/sites/cfe/wp-content/plugins/api/api.php on line 96
+[19-Aug-2015 16:49:28 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 292
+[19-Aug-2015 16:49:47 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 292
+[19-Aug-2015 17:12:27 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 292
+[19-Aug-2015 17:20:50 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 292
+[20-Aug-2015 19:04:17 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 292
+[20-Aug-2015 19:04:27 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 292
+[24-Aug-2015 16:43:02 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 292
+[27-Aug-2015 08:12:53 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 295
+[27-Aug-2015 08:13:40 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 295
+[27-Aug-2015 08:13:41 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 295
+[27-Aug-2015 08:14:22 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/bowser/sites/cfe/wp-content/themes/cfe/templates/header.php on line 297
