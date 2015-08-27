@@ -9,6 +9,7 @@ dist
 bower_components
 node_modules
 npm-debug.log
+error_log
 
 # wordpress specific
 wp-config.php
