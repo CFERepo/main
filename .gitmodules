@@ -1,6 +1,3 @@
 [submodule "cfe"]
     path = wp-content/themes/cfe
     url = git@github.com:CFERepo/cfe.git
-[submodule "api"]
-    path = wp-content/plugins/api
-    url = git@github.com:CFERepo/api.git
