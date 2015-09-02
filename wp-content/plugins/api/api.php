@@ -14,6 +14,28 @@ define('TB', 1099511627776);
 
 class X_API {
 
+	// Order content sequentially based on an array of tags
+	public function order_content($articles, $tags) {
+
+		$index = 1;
+
+		foreach($tags as $tag) {
+			foreach($articles as $key => $article) {
+				foreach($article->tags as $post_tag) {
+					if($tag == $post_tag->slug) {
+						$articles[$key]->position = $index;
+					}
+				}
+			}
+
+			++$index;
+		}
+
+
+		return $articles;
+
+	}
+
 	// Given an article, fetch/process all additional metadata
 	public function process_meta($article, $type = 'featured') {
 
@@ -65,6 +87,8 @@ class X_API {
 			$article->excerpt = wpautop(do_shortcode($article->excerpt));
 
 			$categories = get_the_terms( $reference->ID, 'category' );
+
+			$article->tags = get_the_terms( $reference->ID, 'post_tag' );
 
 			// Order categories according to menu order
 			usort($categories, function($a, $b) {
@@ -123,6 +147,7 @@ class X_API {
 	public function get_articles($post_id = null) {
 
 		$response = array();
+		$order_featured = false;
 
 		$allowed_types = array('search');
 
@@ -143,8 +168,32 @@ class X_API {
 
 			if(isset($terms['tiers']) && $terms['tiers']) {
 				$terms['tier_count'] = count($terms['tiers']);
+				$terms['term_count'] = count($terms['list']);
 			} else {
 				$terms = false;
+			}
+
+			// If only one term selected, assume landing page
+			if($terms && $terms['term_count'] == 1) {
+
+				switch ($details->slug) {
+				    case 'whats-cfe':
+				        $order_featured = array('academics', 'programs', 'commercialization', 'stories', 'contribute', 'stafffaculty');
+				        break;
+				    case 'programs':
+				        $order_featured = array('elp', 'commercialization', 'the-startup', 'startup-treks', 'm-engage', 'techarb', 'desai');
+				        break;
+				    case 'classes':
+				        $order_featured = array('undergraduate', 'graduate', 'academic-advising', 'ehour-class');
+				        break;
+				    case 'funding':
+				        $order_featured = array('mtrac', 'etr-funding', 'jsg', 'jump-start-grants', 'the-startup');
+				        break;
+				    case 'mentorship':
+				        $order_featured = array('startup-advising', 'ask-an-entrepreneur', 'academic-advising', 'eir', 'the-startup', 'techarb', 'm-engage');
+				        break;
+				}
+				
 			}
 			
 
@@ -370,6 +419,12 @@ class X_API {
 				}
 			}
 
+		}
+
+
+		// Pre-order featured content based on tag values
+		if($order_featured) {
+			$response['articles'] = $this->order_content($response['articles'], $order_featured);
 		}
 
 		if($type) {
