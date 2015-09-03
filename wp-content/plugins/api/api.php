@@ -127,6 +127,7 @@ class X_API {
 
 		$response = array();
 		$landing_id = false;
+		$articles_custom = false;
 
 		$allowed_types = array('search');
 
@@ -157,19 +158,19 @@ class X_API {
 
 				switch ($details->slug) {
 				    case 'whats-cfe':
-				        $landing_id = 1;
+				        $landing_id = 949;
 				        break;
 				    case 'programs':
-				        $landing_id = 2;
+				        $landing_id = 979;
 				        break;
 				    case 'classes':
-				        $landing_id = 3;
+				        $landing_id = 982;
 				        break;
 				    case 'funding':
-				        $landing_id = 4;
+				        $landing_id = 984;
 				        break;
 				    case 'mentorship':
-				        $landing_id = 5;
+				        $landing_id = 986;
 				        break;
 				    case 'events':
 				        $landing_id = 6;
@@ -246,6 +247,7 @@ class X_API {
 
 				// If single tier is selected
 				if($terms['tier_count'] == 1) {
+
 					$term_query = array(
 							'taxonomy' => 'category',
 							'field'    => 'term_id',
@@ -262,7 +264,7 @@ class X_API {
 							// Events page specific, order by custom field date
 							$args['meta_query'] = array(
 							        'date_clause' => array(
-							            'key' => 'wpcf-date',
+							            'key' => 'event_date',
 							            'compare' => '>',
 							            'value'	=> 0
 							        ),
@@ -272,23 +274,11 @@ class X_API {
 							$args['orderby'] = 'date_clause';
 
 						} else {
-							// Default meta query
-							$args['meta_query'] = array(
-							        'landing_clause' => array(
-							            'key' => 'wpcf-landing-page',
-							            'value' => $landing_id,
-							        ),
-							        'order_clause' => array(
-							            'key' => 'wpcf-order',
-							            'compare' => '>',
-							            'value'	=> 0
-							        ), 
-							);
 
-							$args['order'] = 'ASC';
-							$args['orderby'] = 'order_clause';
+							$page = get_post($landing_id);
 
-							$args['meta_query']['relation'] = 'AND';
+							$articles_custom = get_field('order', $landing_id);
+
 						}
 
 					}
@@ -356,7 +346,11 @@ class X_API {
 
 
 
-			$articles = get_posts( $args );
+			if(!$articles_custom) {
+				$articles = get_posts( $args );
+			} else {
+				$articles = $articles_custom;
+			}
 
 
 			// Change post_tag operator to NOT IN
