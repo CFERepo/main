@@ -14,27 +14,6 @@ define('TB', 1099511627776);
 
 class X_API {
 
-	// Order content sequentially based on an array of tags
-	public function order_content($articles, $tags) {
-
-		$index = 1;
-
-		foreach($tags as $tag) {
-			foreach($articles as $key => $article) {
-				foreach($article->tags as $post_tag) {
-					if($tag == $post_tag->slug) {
-						$articles[$key]->position = $index;
-					}
-				}
-			}
-
-			++$index;
-		}
-
-
-		return $articles;
-
-	}
 
 	// Given an article, fetch/process all additional metadata
 	public function process_meta($article, $type = 'featured') {
@@ -147,7 +126,7 @@ class X_API {
 	public function get_articles($post_id = null) {
 
 		$response = array();
-		$order_featured = false;
+		$landing_id = false;
 
 		$allowed_types = array('search');
 
@@ -178,19 +157,22 @@ class X_API {
 
 				switch ($details->slug) {
 				    case 'whats-cfe':
-				        $order_featured = array('academics', 'programs', 'commercialization', 'stories', 'contribute', 'stafffaculty');
+				        $landing_id = 1;
 				        break;
 				    case 'programs':
-				        $order_featured = array('elp', 'commercialization', 'the-startup', 'startup-treks', 'm-engage', 'techarb', 'desai');
+				        $landing_id = 2;
 				        break;
 				    case 'classes':
-				        $order_featured = array('undergraduate', 'graduate', 'academic-advising', 'ehour-class');
+				        $landing_id = 3;
 				        break;
 				    case 'funding':
-				        $order_featured = array('mtrac', 'etr-funding', 'jsg', 'jump-start-grants', 'the-startup');
+				        $landing_id = 4;
 				        break;
 				    case 'mentorship':
-				        $order_featured = array('startup-advising', 'ask-an-entrepreneur', 'academic-advising', 'eir', 'the-startup', 'techarb', 'm-engage');
+				        $landing_id = 5;
+				        break;
+				    case 'events':
+				        $landing_id = 6;
 				        break;
 				}
 				
@@ -272,6 +254,44 @@ class X_API {
 					);
 
 					array_push($args['tax_query'], $term_query);
+
+					// Tier is associated with a landing page, create meta query
+					if($landing_id) {
+
+						if($landing_id == 6) {
+							// Events page specific, order by custom field date
+							$args['meta_query'] = array(
+							        'date_clause' => array(
+							            'key' => 'wpcf-date',
+							            'compare' => '>',
+							            'value'	=> 0
+							        ),
+							);
+
+							$args['order'] = 'ASC';
+							$args['orderby'] = 'date_clause';
+
+						} else {
+							// Default meta query
+							$args['meta_query'] = array(
+							        'landing_clause' => array(
+							            'key' => 'wpcf-landing-page',
+							            'value' => $landing_id,
+							        ),
+							        'order_clause' => array(
+							            'key' => 'wpcf-order',
+							            'compare' => '>',
+							            'value'	=> 0
+							        ), 
+							);
+
+							$args['order'] = 'ASC';
+							$args['orderby'] = 'order_clause';
+
+							$args['meta_query']['relation'] = 'AND';
+						}
+
+					}
 				} else {
 					// Multiple...
 
@@ -339,10 +359,16 @@ class X_API {
 			$articles = get_posts( $args );
 
 
-
-
 			// Change post_tag operator to NOT IN
 			$args['tax_query'][0]['operator'] = 'NOT IN';
+
+			// Unset meta query if present
+			if(isset($args['meta_query'])) {
+				unset($args['meta_query']);
+
+				$args['order'] = 'DESC';
+				$args['orderby'] = 'date';
+			}
 
 			// Re-fetch articles with same secondary for related data
 			$args['posts_per_page'] = 20;
@@ -421,11 +447,6 @@ class X_API {
 
 		}
 
-
-		// Pre-order featured content based on tag values
-		if($order_featured) {
-			$response['articles'] = $this->order_content($response['articles'], $order_featured);
-		}
 
 		if($type) {
 			$response['type'] = $type;
