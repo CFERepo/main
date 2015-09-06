@@ -34,6 +34,14 @@ class X_API {
 
 			if($article->thumb) {
 				$article->thumb = $article->thumb[0];
+			} else {
+				$article->thumb = false;
+			}
+
+			if($article->thumb_small) {
+				$article->thumb_small = $article->thumb_small[0];
+			} else {
+				$article->thumb_small = false;
 			}
 
 			$meta = get_post_custom($reference->ID);
@@ -44,26 +52,15 @@ class X_API {
 				$article->alternate = $article->thumb;
 			}*/
 
-			if($article->thumb_small) {
-				$article->thumb_small = $article->thumb_small[0];
-			}
-
 			$article->permalink = get_permalink($reference->ID);
 			$article->content = wpautop(do_shortcode($reference->post_content));
 			$article->title = $reference->post_title;
 
 
-			if($reference->post_excerpt) {
-				$article->excerpt = wp_trim_words( $reference->post_excerpt, 13);
+			$article->excerpt = wp_trim_words( $reference->post_content, 13);
+			$article->excerpt = str_replace('&hellip;', '', $article->excerpt);
 
-				$article->excerpt = str_replace('&hellip;', '', $article->excerpt);
-			} else {
-				$article->excerpt = wp_trim_words( $reference->post_content, 13);
-
-				$article->excerpt = str_replace('&hellip;', '', $article->excerpt);
-			}
-
-			$article->excerpt = wpautop(do_shortcode($article->excerpt));
+			$article->excerpt = wpautop(do_shortcode($article->excerpt) . '...');
 
 			$categories = get_the_terms( $reference->ID, 'category' );
 
@@ -83,6 +80,11 @@ class X_API {
 					// Store tier information
 					if(!isset($tiers[$category->parent])) {
 						$tiers[$category->parent] = get_term($category->parent, 'category');
+					}
+
+					// For Staff/Faculty category, replace large thumbnail with square version
+					if($category->term_id == 52) {
+						$article->thumb = $article->thumb_small;
 					}
 				}
 
@@ -130,6 +132,9 @@ class X_API {
 		$articles_custom = false;
 
 		$allowed_types = array('search');
+
+		// Posts to exclude, used for 'landing pages'
+		$exclude = array();
 
 		if(isset($_GET['terms']) && $_GET['terms']) {
 			$term_list = json_decode($_GET['terms']);
@@ -203,19 +208,23 @@ class X_API {
 				's' => $query,
 				'post_type' => 'post',
 				'post_status' => 'publish',
-				'numberposts' => 20,
-				'category' => '-1'
+				'numberposts' => 30,
+				'category' => '-1',
+				'orderby'          => 'date',
+				'order'            => 'DESC',
 			);
+
+			$query = htmlentities(stripslashes(utf8_encode($query)), ENT_QUOTES);
 
 			$articles = get_posts($args);
 
 			$response['title'] = 'Center for Entrepreneurship - Search';
 
-			$response['url'] = '?s=' . htmlentities($query);
+			$response['url'] = '?s=' . $query;
 
 		} else if(!$post_id) {
 			$args = array(
-			  'posts_per_page'   => 10,
+			  'posts_per_page'   => 20,
 			  'offset'           => 0,
 			  'category'         => '',
 			  'category_name'    => '',
@@ -278,6 +287,14 @@ class X_API {
 							$page = get_post($landing_id);
 
 							$articles_custom = get_field('order', $landing_id);
+
+							foreach($articles_custom as $article) {
+								$exclude[] = $article->ID;
+							}
+
+							if($exclude) {
+								$args['exclude'] = implode(",", $exclude);
+							}
 
 						}
 
