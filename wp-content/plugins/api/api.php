@@ -127,7 +127,7 @@ class X_API {
 
 	public function get_articles($post_id = null) {
 
-		$response = array();
+		$response = array('selected_terms' => false);
 		$landing_id = false;
 		$articles_custom = false;
 
@@ -138,6 +138,9 @@ class X_API {
 
 		if(isset($_GET['terms']) && $_GET['terms']) {
 			$term_list = json_decode($_GET['terms']);
+
+			// Set selected terms for json output
+			$response['selected_terms'] = implode(",", $term_list);
 
 			$terms = array();
 
