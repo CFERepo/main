@@ -21,6 +21,7 @@ wp-content/advanced-cache.php
 wp-content/wp-cache-config.php
 wp-content/cache/*
 wp-content/cache/supercache/*
+wp-content/plugins/wp-migrate-db
 
 wp-content/themes/twentyfifteen
 wp-content/themes/twentyfourteen
