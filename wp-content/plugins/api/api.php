@@ -167,18 +167,23 @@ class X_API {
 				switch ($details->slug) {
 				    case 'whats-cfe':
 				        $landing_id = 949;
+				        $category_id = 10;
 				        break;
 				    case 'programs':
 				        $landing_id = 979;
+				        $category_id = 3;
 				        break;
 				    case 'classes':
 				        $landing_id = 982;
+				        $category_id = 4;
 				        break;
 				    case 'funding':
 				        $landing_id = 984;
+				        $category_id = 7;
 				        break;
 				    case 'mentorship':
 				        $landing_id = 986;
+				        $category_id = 9;
 				        break;
 				    case 'events':
 				        $landing_id = 6;
@@ -219,30 +224,24 @@ class X_API {
 
 			$query = htmlentities(stripslashes(utf8_encode($query)), ENT_QUOTES);
 
-			$articles = get_posts($args);
+			$q = new WP_Query($args);
+
+			$articles = $q->get_posts();
 
 			$response['title'] = 'Center for Entrepreneurship - Search';
 
 			$response['url'] = '?s=' . $query;
 
 		} else if(!$post_id) {
+
 			$args = array(
-			  'posts_per_page'   => 20,
+			  'posts_per_page'   => 10,
 			  'offset'           => 0,
-			  'category'         => '',
-			  'category_name'    => '',
 			  'orderby'          => 'date',
 			  'order'            => 'DESC',
-			  'include'          => '',
 			  'exclude'          => '',
-			  'meta_key'         => '',
-			  'meta_value'       => '',
 			  'post_type'        => 'post',
-			  'post_mime_type'   => '',
-			  'post_parent'      => '',
-			  'author'     => '',
 			  'post_status'      => 'publish',
-			  'suppress_filters' => true,
 			);
 
 			// Base query
@@ -259,6 +258,8 @@ class X_API {
 
 				// If single tier is selected
 				if($terms['tier_count'] == 1) {
+
+					$args['tax_query']['relation'] = 'OR';
 
 					$term_query = array(
 							'taxonomy' => 'category',
@@ -291,14 +292,6 @@ class X_API {
 
 							$articles_custom = get_field('order', $landing_id);
 
-							foreach($articles_custom as $article) {
-								$exclude[] = $article->ID;
-							}
-
-							if($exclude) {
-								$args['exclude'] = implode(",", $exclude);
-							}
-
 						}
 
 					}
@@ -316,6 +309,21 @@ class X_API {
 						array_push($args['tax_query'], $term_query);
 					}
 
+				}
+
+
+				if(!$landing_id) {
+					// Re-order featured content if higher priority values set
+					$args['meta_query'] = array(
+							'relation' => 'OR',
+					        'priority' => array(
+					        	'key'	=> 'priority',
+				                'compare' => '>=',
+				                'value'	=> 0
+					        )
+					);
+
+					$args['orderby'] = array( 'priority' => 'DESC', 'date' => 'DESC' );
 				}
 
 				//print_r($args);
@@ -367,14 +375,29 @@ class X_API {
 
 
 			if(!$articles_custom) {
-				$articles = get_posts( $args );
+
+				$q = new WP_Query($args);
+
+				//echo $q->request;
+
+				$articles = $q->get_posts();
+
 			} else {
 				$articles = $articles_custom;
 			}
 
 
-			// Change post_tag operator to NOT IN
-			$args['tax_query'][0]['operator'] = 'NOT IN';
+			// Add any featured items to exclude
+			foreach($articles as $article) {
+				$exclude[] = $article->ID;
+			}
+
+			if($exclude) {
+				$args['post__not_in'] = $exclude;
+			}
+
+			// Remove featured tag constraint
+			unset($args['tax_query'][0]);
 
 			// Unset meta query if present
 			if(isset($args['meta_query'])) {
@@ -385,10 +408,14 @@ class X_API {
 			}
 
 			// Re-fetch articles with same secondary for related data
-			$args['posts_per_page'] = 20;
-			$related = get_posts( $args );
+			$args['posts_per_page'] = 999999;
+
+			$q = new WP_Query($args);
+
+			$related = $q->get_posts();
 
 		} else {
+
 			$articles[] = get_post( $post_id );
 
 			$response['url'] = get_permalink($post_id);
