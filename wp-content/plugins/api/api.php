@@ -29,7 +29,7 @@ class X_API {
 
 			$article->uid = $reference->ID;
 
-			$article->thumb = wp_get_attachment_image_src( get_post_thumbnail_id($reference->ID), array(  980, 462 ), false, '' ); 
+			$article->thumb = wp_get_attachment_image_src( get_post_thumbnail_id($reference->ID), array(  700, 700 ), false, '' ); 
 			$article->thumb_small = wp_get_attachment_image_src( get_post_thumbnail_id($reference->ID), array(  600, 600 ), false, '' );
 
 			if($article->thumb) {
@@ -242,6 +242,7 @@ class X_API {
 			  'exclude'          => '',
 			  'post_type'        => 'post',
 			  'post_status'      => 'publish',
+			  'include_children'	=> false
 			);
 
 			// Base query
@@ -250,7 +251,8 @@ class X_API {
 			      array(
 			          'taxonomy'  => 'post_tag',
 			          'field'     => 'slug',
-			          'terms'     => sanitize_title( 'featured' )
+			          'terms'     => array('featured'),
+			          'operator' => 'IN'
 			      )
 			);
 
@@ -259,16 +261,20 @@ class X_API {
 				// If single tier is selected
 				if($terms['tier_count'] == 1) {
 
-					$args['tax_query']['relation'] = 'OR';
-
-					$term_query = array(
-							'taxonomy' => 'category',
-							'field'    => 'term_id',
-							'terms'    => $terms['list'],
-							'operator' => 'IN',
-					);
+					$term_query = array('relation' => 'OR');
 
 					array_push($args['tax_query'], $term_query);
+
+					foreach($terms['list'] as $term) {
+						$term_query = array(
+								'taxonomy' => 'category',
+								'field'    => 'term_id',
+								'terms'    => array($term)
+						);
+
+						array_push($args['tax_query'][1], $term_query);
+					}
+
 
 					// Tier is associated with a landing page, create meta query
 					if($landing_id) {
@@ -315,7 +321,6 @@ class X_API {
 				if(!$landing_id) {
 					// Re-order featured content if higher priority values set
 					$args['meta_query'] = array(
-							'relation' => 'OR',
 					        'priority' => array(
 					        	'key'	=> 'priority',
 				                'compare' => '>=',
@@ -380,7 +385,12 @@ class X_API {
 
 				//echo $q->request;
 
-				$articles = $q->get_posts();
+				while ( $q->have_posts() ) {
+					$q->the_post();
+					$articles[] = $q->post;
+				}
+
+				wp_reset_postdata();
 
 			} else {
 				$articles = $articles_custom;
@@ -408,11 +418,18 @@ class X_API {
 			}
 
 			// Re-fetch articles with same secondary for related data
-			$args['posts_per_page'] = 999999;
+			$args['posts_per_page'] = '-1';
 
-			$q = new WP_Query($args);
+			//print_r($args);
 
-			$related = $q->get_posts();
+			$q2 = new WP_Query($args);
+
+			while ( $q2->have_posts() ) {
+				$q2->the_post();
+				$related[] = $q2->post;
+			}
+
+			wp_reset_postdata();
 
 		} else {
 
