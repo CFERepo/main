@@ -29,8 +29,8 @@ class X_API {
 
 			$article->uid = $reference->ID;
 
-			$article->thumb = wp_get_attachment_image_src( get_post_thumbnail_id($reference->ID), array(  700, 700 ), false, '' ); 
-			$article->thumb_small = wp_get_attachment_image_src( get_post_thumbnail_id($reference->ID), array(  600, 600 ), false, '' );
+			$article->thumb = wp_get_attachment_image_src( get_post_thumbnail_id($reference->ID), array(  700, 700 ), false ); 
+			$article->thumb_small = wp_get_attachment_image_src( get_post_thumbnail_id($reference->ID), array(  600, 600 ), false );
 
 			if($article->thumb) {
 				$article->thumb = $article->thumb[0];
