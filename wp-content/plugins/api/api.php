@@ -53,7 +53,7 @@ class X_API {
 			}*/
 
 			$article->permalink = get_permalink($reference->ID);
-			$article->content = wpautop(do_shortcode($reference->post_content));
+			$article->content = apply_filters( 'the_content', $reference->post_content );
 			$article->title = $reference->post_title;
 
 
