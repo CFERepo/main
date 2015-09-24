@@ -218,7 +218,7 @@ class X_API {
 				's' => $query,
 				'post_type' => 'post',
 				'post_status' => 'publish',
-				'numberposts' => 100,
+				'posts_per_page'   => 100,
 				'category' => '-1'
 			);
 
