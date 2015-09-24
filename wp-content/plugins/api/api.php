@@ -52,6 +52,8 @@ class X_API {
 				$article->alternate = $article->thumb;
 			}*/
 
+			$article->caption = get_field('caption', $reference->ID);
+
 			$article->permalink = get_permalink($reference->ID);
 			$article->content = apply_filters( 'the_content', $reference->post_content );
 			$article->title = $reference->post_title;
@@ -216,10 +218,8 @@ class X_API {
 				's' => $query,
 				'post_type' => 'post',
 				'post_status' => 'publish',
-				'numberposts' => 30,
-				'category' => '-1',
-				'orderby'          => 'date',
-				'order'            => 'DESC',
+				'numberposts' => 100,
+				'category' => '-1'
 			);
 
 			$query = htmlentities(stripslashes(utf8_encode($query)), ENT_QUOTES);
