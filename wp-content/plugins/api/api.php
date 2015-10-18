@@ -14,6 +14,28 @@ define('TB', 1099511627776);
 
 class X_API {
 
+	public function fetch_articles($args = false) {
+
+		$articles = array();
+
+		if($args) {
+			$q = new WP_Query($args);
+
+			//echo $q->request;
+
+			while ( $q->have_posts() ) {
+				$q->the_post();
+				$articles[] = $q->post;
+			}
+
+			wp_reset_postdata();
+
+			return $articles;
+		} else {
+			return false;
+		}
+
+	}
 
 	// Given an article, fetch/process all additional metadata
 	public function process_meta($article, $type = 'featured') {
@@ -285,18 +307,52 @@ class X_API {
 							        'date_clause' => array(
 							            'key' => 'event_date',
 							            'compare' => '>',
-							            'value'	=> 0
-							        ),
+							            'value'	=> time()
+							        )
 							);
 
 							$args['order'] = 'ASC';
 							$args['orderby'] = 'date_clause';
 
+							$articles = $this->fetch_articles($args);
+
+							// Add any featured items to exclude
+							foreach($articles as $article) {
+								$exclude[] = $article->ID;
+							}
+
+							$args['meta_query'] = array(
+									'relation' => 'OR',
+							        'date_clause' => array(
+							            'key' => 'event_date',
+							            'compare' => '<=',
+							            'value'	=> 0
+							        ),
+				                    'date_clause_none' => array(
+				                        'key' => 'event_date',
+				                        'compare' => 'NOT EXISTS'
+				                    )
+							);
+
+
+							$args['orderby'] = array( 'date' => 'DESC');
+							$args['post__not_in'] = $exclude;
+
+							$articles_standard = $this->fetch_articles($args);
+
+							if(is_array($articles) && is_array($articles_standard)) {
+
+								foreach($articles_standard as $article) {
+									array_push($articles, $article);
+								}
+								
+							}
+
 						} else {
 
 							$page = get_post($landing_id);
 
-							$articles_custom = get_field('order', $landing_id);
+							$articles = get_field('order', $landing_id);
 
 						}
 
@@ -319,16 +375,43 @@ class X_API {
 
 
 				if(!$landing_id) {
+
+					$args['orderby'] = array( 'date' => 'DESC', 'priority' => 'ASC' );
+
 					// Re-order featured content if higher priority values set
 					$args['meta_query'] = array(
 					        'priority' => array(
 					        	'key'	=> 'priority',
-				                'compare' => '>=',
+				                'compare' => '>',
 				                'value'	=> 0
 					        )
 					);
 
-					$args['orderby'] = array( 'priority' => 'DESC', 'date' => 'DESC' );
+					$articles = $this->fetch_articles($args);
+
+					// Add any featured items to exclude
+					foreach($articles as $article) {
+						$exclude[] = $article->ID;
+					}
+
+					$args['meta_query'] = array(
+					        'priority' => array(
+					        	'key'	=> 'priority',
+				                'compare' => '<=',
+				                'value'	=> 0
+					        )
+					);
+
+					$args['orderby'] = array( 'date' => 'DESC');
+					$args['post__not_in'] = $exclude;
+
+					$articles_standard = $this->fetch_articles($args);
+
+					if(is_array($articles) && is_array($articles_standard)) {
+						foreach($articles_standard as $article) {
+							array_push($articles, $article);
+						}
+					}
 				}
 
 				//print_r($args);
@@ -378,63 +461,43 @@ class X_API {
 			}
 
 
-
-			if(!$articles_custom) {
-
-				$q = new WP_Query($args);
-
-				//echo $q->request;
-
-				while ( $q->have_posts() ) {
-					$q->the_post();
-					$articles[] = $q->post;
+			if(is_array($articles)) {
+				// Add any featured items to exclude
+				foreach($articles as $article) {
+					$exclude[] = $article->ID;
 				}
 
-				wp_reset_postdata();
+				if($exclude) {
+					$args['post__not_in'] = $exclude;
+				}
 
+				// Remove featured tag constraint
+				unset($args['tax_query'][0]);
+
+				// Unset meta query if present
+				if(isset($args['meta_query'])) {
+					unset($args['meta_query']);
+
+					$args['order'] = 'DESC';
+					$args['orderby'] = 'date';
+				}
+
+				// Re-fetch articles with same secondary for related data
+				$args['posts_per_page'] = '-1';
+
+				//print_r($args);
+
+				$related = $this->fetch_articles($args);
 			} else {
-				$articles = $articles_custom;
+				$response['articles'] = false;
 			}
 
-
-			// Add any featured items to exclude
-			foreach($articles as $article) {
-				$exclude[] = $article->ID;
-			}
-
-			if($exclude) {
-				$args['post__not_in'] = $exclude;
-			}
-
-			// Remove featured tag constraint
-			unset($args['tax_query'][0]);
-
-			// Unset meta query if present
-			if(isset($args['meta_query'])) {
-				unset($args['meta_query']);
-
-				$args['order'] = 'DESC';
-				$args['orderby'] = 'date';
-			}
-
-			// Re-fetch articles with same secondary for related data
-			$args['posts_per_page'] = '-1';
-
-			//print_r($args);
-
-			$q2 = new WP_Query($args);
-
-			while ( $q2->have_posts() ) {
-				$q2->the_post();
-				$related[] = $q2->post;
-			}
-
-			wp_reset_postdata();
 
 		} else {
 
 			$articles[] = get_post( $post_id );
 
+			$response['type'] = 'post';
 			$response['url'] = get_permalink($post_id);
 		}
 
