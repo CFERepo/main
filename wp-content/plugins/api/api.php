@@ -247,7 +247,15 @@ class X_API {
 			}
 
 			if($page == 1) {
-				$args = array('post_type' => 'post', 'post_status' => 'publish', 'category_name' => $query, 'orderby'          => 'date', 'order'            => 'DESC', );
+				$args = array(
+					'post_type' => 'post', 
+					'post_status' => 'publish', 
+					'category_name' => $query, 
+					'orderby'          => 'date', 
+					'order'            => 'DESC',
+					'posts_per_page' => -1,
+					'numposts' => -1
+				 );
 
 				$q = new WP_Query($args);
 
