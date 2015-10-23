@@ -236,22 +236,69 @@ class X_API {
 
 		if($query && $type == 'search') {
 
+			$exclude = array();
+
+			$query = htmlentities(stripslashes(utf8_encode($query)), ENT_QUOTES);
+
+			if(!isset($_GET['current_page']) && !$_GET['current_page']) {
+				$page = 1;
+			} else {
+				$page = $_GET['current_page'];
+			}
+
+			if($page == 1) {
+				$args = array('post_type' => 'post', 'post_status' => 'publish', 'category_name' => $query, 'orderby'          => 'date', 'order'            => 'DESC', );
+
+				$q = new WP_Query($args);
+
+				$articles = $q->get_posts();
+
+				foreach($articles as $article) {
+					$exclude[] = $article->ID;
+				}
+
+			} else {
+				$articles = array();
+			}
+
+			wp_reset_postdata();
+
 			$args = array(
 				's' => $query,
 				'post_type' => 'post',
 				'post_status' => 'publish',
-				'posts_per_page'   => 100,
-				'category' => '-1'
+				'posts_per_page'   => 50,
+				'category' => '-1',
+				'paged' => $page
 			);
 
-			$query = htmlentities(stripslashes(utf8_encode($query)), ENT_QUOTES);
+			if($exclude) {
+				$args['post__not_in'] = $exclude;
+			}
 
 			$q = new WP_Query($args);
 
-			$articles = $q->get_posts();
+			$secondary_articles = $q->get_posts();
 
+			foreach($secondary_articles as $article) {
+				array_push($articles, $article);
+			}
+
+			$big = 999999999;
+
+			$response['pagination'] = paginate_links( array(
+				'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+				'format' => '?paged=%#%',
+				'current' => max( 1, $page ),
+				'total' => $q->max_num_pages
+			) );
+
+			if(!$response['pagination']) {
+				$response['pagination'] = false;
+			}
+
+			$response['count'] = $q->max_num_pages;
 			$response['title'] = 'Center for Entrepreneurship - Search';
-
 			$response['url'] = '?s=' . $query;
 
 		} else if(!$post_id) {
