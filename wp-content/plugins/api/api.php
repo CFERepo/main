@@ -62,15 +62,31 @@ class X_API {
 				$article->thumb = false;
 			}
 
-			if($article->thumb_small) {
-				$article->thumb_small = $article->thumb_small[0];
+			if($article->thumb_extra_small) {
+				$article->thumb_extra_small = $article->thumb_extra_small[0];
 			} else {
+				$article->thumb_extra_small = false;
+			}
 
-				if($article->thumb_extra_small) {
-					$article->thumb_small = $article->thumb_extra_small;
+			if($article->thumb_small) {
+
+				$w = $article->thumb_small[1];
+				$h = $article->thumb_small[2];
+
+				// Check if proper dimensions
+				if($w == 600 && $h == 600) {
+					$article->thumb_small = $article->thumb_small[0];
 				} else {
-					$article->thumb_small = false;
+					// If not (original dimensions), serve extra small thumb
+					if($article->thumb_extra_small) {
+						$article->thumb_small = $article->thumb_extra_small;
+					} else {
+						$article->thumb_small = false;
+					}
 				}
+
+			} else {
+				$article->thumb_small = false;
 			}
 
 			$meta = get_post_custom($reference->ID);
@@ -111,11 +127,6 @@ class X_API {
 					// Store tier information
 					if(!isset($tiers[$category->parent])) {
 						$tiers[$category->parent] = get_term($category->parent, 'category');
-					}
-
-					// For Staff/Faculty category, replace large thumbnail with square version
-					if($category->term_id == 52) {
-						$article->thumb = $article->thumb_small;
 					}
 				}
 
