@@ -54,6 +54,8 @@ class X_API {
 			$article->thumb = wp_get_attachment_image_src( get_post_thumbnail_id($reference->ID), array(  700, 700 ), false ); 
 			$article->thumb_small = wp_get_attachment_image_src( get_post_thumbnail_id($reference->ID), array(  600, 600 ), false );
 
+			$article->thumb_extra_small = wp_get_attachment_image_src( get_post_thumbnail_id($reference->ID), array(  150, 150 ), false );
+
 			if($article->thumb) {
 				$article->thumb = $article->thumb[0];
 			} else {
@@ -63,7 +65,12 @@ class X_API {
 			if($article->thumb_small) {
 				$article->thumb_small = $article->thumb_small[0];
 			} else {
-				$article->thumb_small = false;
+
+				if($article->thumb_extra_small) {
+					$article->thumb_small = $article->thumb_extra_small;
+				} else {
+					$article->thumb_small = false;
+				}
 			}
 
 			$meta = get_post_custom($reference->ID);
