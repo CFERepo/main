@@ -449,7 +449,7 @@ class X_API {
 
 				if(!$landing_id) {
 
-					$args['orderby'] = array( 'date' => 'DESC', 'priority' => 'ASC' );
+					$args['orderby'] = array( 'priority' => 'ASC', 'date' => 'DESC' );
 
 					// Re-order featured content if higher priority values set
 					$args['meta_query'] = array(
