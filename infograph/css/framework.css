@@ -246,6 +246,15 @@ ul li span {
     transition: all .1s ease-in-out;
 }
 
+.inactive {
+    pointer-events: none;
+}
+
+.point a.inactive, a.inactive .label {
+    transition: none;
+    pointer-events: none;
+}
+
 .circle-container a, .circle-container a:hover, .circle-container a:visited, .circle-container a:link {
 	color: #0c4259;
     text-decoration: none;
@@ -255,6 +264,12 @@ ul li span {
 	transform: scale(1.1);
 	-webkit-backface-visibility: hidden;
     -webkit-filter: blur(0.1);
+}
+
+.circle-container a.inactive:hover .label {
+    transform: scale(1);
+    -webkit-backface-visibility: hidden;
+    -webkit-filter: blur(0);
 }
 
 .point span {
