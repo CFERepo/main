@@ -178,6 +178,14 @@ ul li span {
     color: #0c4259;
 }
 
+.resources a span {
+	transition: all .3s ease-in-out;
+}
+
+.resources a:hover span {
+	transform: scale(1.2);
+}
+
 .line {
 	transform-origin: 0 100%;
 	height: 3px;
