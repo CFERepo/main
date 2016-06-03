@@ -649,6 +649,12 @@ footer {
     display: none;
 }
 
+.contact, .blurb {
+    a, a:hover {
+        color: #efbe1a;
+    }
+}
+
 .contact {
     background-color: rgba(5, 46, 82, 0.8);
     width: 100%;
@@ -658,10 +664,6 @@ footer {
     strong {
         font-size: 2em;
         text-transform: uppercase;
-    }
-
-    a, a:hover {
-        color: #efbe1a;
     }
 
     &.fixed {
